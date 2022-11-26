@@ -1,0 +1,28 @@
+version: latest
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: appdios
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init:/docker-entrypoint-initdb.d
+  
+
+  web:
+    build: .
+    command: sh -c " ./entrypoint.sh"
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/Dios
+    depends_on:
+      - db
+
+
+
+     
+  

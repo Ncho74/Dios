@@ -1,0 +1,4 @@
+.git
+.yml
+__pycache__/
+.env

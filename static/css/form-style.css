@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.container1 {
+  width: 1000px;
+  height: 900px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+#titre {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #777;
+}
+.container1 .form-naiss {
+  width: 600px;
+  position: absolute;
+  top: 0px;
+  left: 90px;
+  transition: 0.5s;
+}
+.form-naiss input {
+  width: 100%;
+  padding: 10px 5px;
+  margin: 5px 0;
+  outline: none;
+  background: transparent;
+}
+::placeholder {
+  color: #777;
+}
+.btn-box1 {
+  width: 100%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.form-naiss button {
+  width: 140px;
+  height: 45px;
+  margin: 0 10px;
+  border-radius: 30px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+#Form2 {
+  left: 2500px;
+}
+#Form3 {
+  left: 2500px;
+}
+.step-row {
+  width: 1000px;
+  height: 40px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 -1px 5px -1px #000;
+  position: relative;
+}
+.step-col {
+  width: 300px;
+  text-align: center;
+  color: #333;
+  position: relative;
+}
+#progress {
+  position: absolute;
+  height: 100%;
+  width: 250px;
+  background: linear-gradient(to right, #ff9710, #06ff4d);
+  transition: 1s;
+}
+#progress::after {
+  content: "";
+  height: 0;
+  width: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  position: absolute;
+  right: -20px;
+  top: 0;
+  border-left: 20px solid #06ff4d;
+}

@@ -1,0 +1,43 @@
+.header-extrait{
+    display:flex;
+    flex-direction:row;
+
+}
+.header-extrait .infoMarie{
+ padding-top: 0px;
+  padding-left:30px;
+}
+.header-extrait .infoMarie img{
+    width: 150px;
+    height: 100px;
+ 
+}
+
+.header-extrait .infoextrait{
+    padding-left: 350px;
+    padding-top: 0px;
+  
+}
+.header-extrait .infoextrait img{
+    width: 150px;
+    height: 100px;
+
+}
+@media print {
+    #train{
+        padding: 2rem;
+    }
+  
+ 
+}
+
+
+
+
+
+/* 
+#imprimer{
+    margin: 150px;
+    height: 500px;
+    width: 400px;
+} */

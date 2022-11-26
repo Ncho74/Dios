@@ -14,8 +14,6 @@ from pathlib import Path
 import  os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
@@ -25,7 +23,7 @@ SECRET_KEY = 'django-insecure-2%41cu*ue0jlunjyu*1&q$&%25bzp69l0+yie$)+z-mfz8)3*+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -80,16 +78,22 @@ WSGI_APPLICATION = 'Dios.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+
 import pymysql
 pymysql.install_as_MySQLdb()
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME':"appDios",
+        'NAME':"appdios",
         "USER":"root",
-        "PASSWORD":"",
-        "HOST":"127.0.0.1",
+        "PASSWORD":"root",
+        "HOST":"db",#docker db
+        'PORT': '3306',
+        'default-character-set': 'utf8',
+        'OPTIONS': {
+            'sql_mode': 'traditional',
+        }
     }
 }
 
@@ -111,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-TEMPLATES[0]["DIRS"]=[os.path.join(BASE_DIR,"Templates")]
+TEMPLATES[0]["DIRS"]=[os.path.join(BASE_DIR,"Template")]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
@@ -133,7 +137,7 @@ STATICFILES_DIRS=[os.path.join(BASE_DIR,"static")]
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 EMAIL_HOST="smtp.hostmail.com"
-EMAIL_PORT=587
+EMAIL_PORT=587 
 EMAIL_HOST_USER=""
 EMAIL_HOST_PASSWORD=""
 EMAIL_USER_TLS=True
